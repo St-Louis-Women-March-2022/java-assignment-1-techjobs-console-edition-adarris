@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -119,7 +118,16 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        ArrayList<HashMap<String, String>> selectedJobs = someJobs;
+        for (int k = 0; k < someJobs.size(); k++) {
+            if (selectedJobs == null || selectedJobs.size() == 0 ) {
+                System.out.println("No Results");
+                break;
+            }
+            String keys = someJobs.get(k).keySet();
+            String values = someJobs.get(k).values();
 
-        System.out.println("printJobs is not implemented yet");
+            System.out.println("*****\n" + keys + ": " + values + "\n*****\n");
+            }
     }
 }
