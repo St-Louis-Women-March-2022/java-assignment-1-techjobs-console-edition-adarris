@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -118,16 +119,23 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        ArrayList<HashMap<String, String>> selectedJobs = someJobs;
-        for (int k = 0; k < someJobs.size(); k++) {
-            if (selectedJobs == null || selectedJobs.size() == 0 ) {
-                System.out.println("No Results");
-                break;
-            }
-            String keys = someJobs.get(k).keySet();
-            String values = someJobs.get(k).values();
 
-            System.out.println("*****\n" + keys + ": " + values + "\n*****\n");
-            }
+         for (HashMap<String, String> selectedJob : someJobs) {
+             String asteriks = "*****";
+             System.out.println("\n" + asteriks);
+
+             for (Map.Entry<String, String> entry : selectedJob.entrySet()) { //loop through hashmap and print entry set
+                 String key = entry.getKey();
+                 String value = entry.getValue();
+
+                 System.out.println(key + ": " + value);
+                 //assign astericks to a variable and then have one outside of the loop and one at the after the loop
+             }
+
+             System.out.println(asteriks);
+         }
+         if (someJobs.isEmpty()) {
+            System.out.println("No Results");
+        }
     }
 }
