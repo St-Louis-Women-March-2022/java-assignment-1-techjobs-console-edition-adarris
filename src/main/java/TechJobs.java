@@ -135,7 +135,7 @@ public class TechJobs {
              System.out.println(asteriks);
          }
          if (someJobs.isEmpty()) {
-            System.out.println("No Results");
+            System.out.print("No Results");
         }
     }
 }
